@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+    function TransportationOnVacation(day){
+		return ((day * 40) - (Math.trunc(day/7) * 50) - (Math.trunc((day % 7)/3) * 20));
+	}
+	document.write(TransportationOnVacation(14));
+</script>	
+</body>
+</html>

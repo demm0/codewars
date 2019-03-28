@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+    function MiddleCharacter(str){
+			if ((str.length % 2) == 0 ){
+				return (str[str.length/2-1]+str[str.length/2]);
+			}
+			else{
+				return (str[Math.trunc(str.length/2)]);
+			}
+	}
+	document.write(MiddleCharacter('klasdfsdffdgsdfgsdfgrsf'));
+</script>	
+</body>
+</html>
