@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+	let items = [1,2,3,4,5,6,7,8,9];
+	function isEven(n) {return n % 2 == 0}
+    function partitionOn(pred, items) {
+  	var items;
+	let arrTrue = [];
+	let arrFalse = [];
+	for (let i = 0; i< items.length; i ++){
+		if (pred(items[i]) == true){
+			arrTrue.push(items[i]);
+		}
+		else{
+			arrFalse.push(items[i]);	
+		}
+	}
+    	items = [];
+		items = arrFalse.concat(arrTrue);
+		return [arrFalse.length, items];
+}
+	let i = partitionOn(isEven , items);
+	document.write(i	);
+	document.write('<br>');
+	document.write(items);
+</script>	
+</body>
+</html>
