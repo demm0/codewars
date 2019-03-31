@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+   	function createFunctions(n) {
+  var callbacks = [];
+
+  for (let i = 0; i < n; i ++) {
+    callbacks.push(function() {
+      return i;
+    });
+  }
+  
+  return callbacks;
+}
+	document.write(createFunctions(5));
+</script>	
+</body>
+</html>

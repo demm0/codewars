@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+   	function convert(input, source, target) {
+		//Перевод числа из любой системы счисления в десятичную
+		function SourceToDec(inp,sour){// Аргументы: строка, система счисления 
+			let result = 0;
+			inp = String(inp);
+			for(let i = 0; i < inp.length; i ++){
+				result = result + (sour.indexOf(inp.substr(inp.length - i - 1 , 1)) * Math.pow(sour.length , i));
+			}
+			return result;
+		}
+
+		function StrReverse(s){// Функция переворачивающая слово
+    		return s.split("").reverse().join("");
+		}
+		a = SourceToDec(input,source);
+		//Перевод числа из десятичной системы счисления в любую другую
+		function DecToTarget(inp,tar){// Аргументы: число, система счисления 
+			let result = "";
+			let lengthTar = tar.length;
+			if (inp == 0) {
+				result = tar[0];
+			}
+			while(inp > 0){//Цикл до тех пор пока A не будет меньше нуля
+				result = String(result) + tar [inp % lengthTar];//Записываем символ 
+				inp = Math.floor(inp / lengthTar);//Делим без остатка 
+			}
+			return StrReverse (result);//Выводим результат задом наперед 
+		}
+		return DecToTarget(a,target);
+	}
+
+	var Alphabet = {
+  		BINARY:        '01',
+ 		OCTAL:         '01234567',
+  		DECIMAL:       '0123456789',
+ 		HEXA_DECIMAL:  '0123456789abcdef',
+  		ALPHA_LOWER:   'abcdefghijklmnopqrstuvwxyz',
+  		ALPHA_UPPER:   'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  		ALPHA:         'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  		ALPHA_NUMERIC: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+		};
+	document.write(convert(0, Alphabet.DECIMAL,Alphabet.ALPHA));
+</script>	
+</body>
+</html>

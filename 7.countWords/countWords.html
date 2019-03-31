@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+function countWords(str) {
+let schet = 0;
+	function uslenter(symbol){
+		let usl = [
+		' ',
+		'﻿',
+		',',
+	/*	'.',
+		'-',
+		'!',
+		'?',
+		':',
+		';',
+    
+    "'",
+    '"',
+    '=',
+    '%',
+    '@',
+    '#',
+    '$',
+    '(',
+    ')',
+    '[',
+    ']',
+    '{',
+    '}',
+    '/',
+    '|',
+    '_',
+    '+',
+    '*',
+    '~',
+    '&',
+    '<',
+    '>',*/
+		];
+    let k = 1;
+		for (let i = 0; i < usl.length; i ++){
+			if (symbol == usl[i]) return true;
+		}
+		return false;
+	}
+  if (str.length > 0){
+	  if ((uslenter(str[0]) == false) && ((uslenter(str[1]) == false))){
+		  schet ++;
+      k = 0;
+	  }
+    if ((uslenter(str[0]) == false) && ((uslenter(str[1]) == true))){
+		  schet ++;
+      k = 2;
+	  }
+    for (let i = k; i < str.length-1; i ++){
+		  if ((uslenter(str[i]) == true) && (uslenter(str[i + 1]) == false)){
+			  schet ++;
+		  }
+	  }
+  }
+	return schet;
+}
+document.write(countWords('Hello  world!   j   ! e '));
+</script>	
+</body>
+</html>

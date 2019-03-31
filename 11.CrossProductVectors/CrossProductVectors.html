@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+  	function crossProduct (vector1, vector2) {
+    if ((vector1.length != 3) || (vector2.length != 3)) {
+			alert('Arguments are not 3D vectors!');
+		}
+		for (let s = 0; s < vector1.length; s ++){
+   	if ((typeof(vector1[s]) != 'number') || (typeof(vector2[s]) != 'number')) {
+			alert('Arguments are not 3D vectors!');
+			}
+		}
+		let i = (vector1[1] * vector2[2] - vector1[2] * vector2[1]);
+		let j = (vector1[2] * vector2[0] - vector1[0] * vector2[2]);
+		let k = (vector1[0] * vector2[1] - vector1[1] * vector2[0]);
+		let VectorResult = [i,j,k];
+		return VectorResult;
+	}
+	document.write(crossProduct ([1,0,0], [0,1,'y']));
+</script>	
+</body>
+</html>

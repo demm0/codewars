@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+function array(arr) {
+	let result = '';
+	let schet = 0;
+	let arrresult = [];
+	let elemresult = '';
+	if (arr.length > 0){
+		for (let i = 0; i < arr.length; i++){
+			if (arr[i] == ','){
+				schet ++;
+			}
+		}
+		if (schet >=2){
+			for (i = arr.indexOf(',')+1; i < arr.length; i++){
+				if (arr[i] != ','){
+					elemresult = elemresult+arr[i];
+				}
+				else{
+					arrresult.push(elemresult);
+					elemresult = '';
+				}
+			}
+		}
+		else return null;
+		for (i = 0; i < arrresult.length; i++){
+			if (i != arrresult.length-1)	result = result + arrresult[i] + ' ';	
+			else result = result + arrresult[i];
+		}
+	}
+	else return null;
+	return result;
+}
+document.write(array('1,2,3'));
+</script>	
+</body>
+</html>
