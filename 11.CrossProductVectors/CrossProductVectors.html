@@ -8,8 +8,13 @@
 <body>
 <script type="text/javascript"> 
   	function crossProduct (vector1, vector2) {
+    if ((typeof(vector1) == 'undefined') || (typeof(vector2) == 'undefined')){
+        console.log(vector1);
+        console.log(vector2);
+      	alert('Arguments are not 3D vectors!');
+    }
     if ((vector1.length != 3) || (vector2.length != 3)) {
-			alert('Arguments are not 3D vectors!');
+				alert('Arguments are not 3D vectors!');
 		}
 		for (let s = 0; s < vector1.length; s ++){
    	if ((typeof(vector1[s]) != 'number') || (typeof(vector2[s]) != 'number')) {
@@ -22,7 +27,7 @@
 		let VectorResult = [i,j,k];
 		return VectorResult;
 	}
-	document.write(crossProduct ([1,0,0], [0,1,'y']));
+	document.write(crossProduct (undefined, undefined));
 </script>	
 </body>
 </html>

@@ -7,22 +7,38 @@
 </head>
 <body>
 <script type="text/javascript"> 
-	function partitionOn(pred, arritems) {
-		let arrTrue = [];
-		let arrFalse = [];
-		for (let i = 0; i< arritems.length; i ++){
-			if (pred(arritems[i]) == true)	arrTrue.push(arritems[i]);
-			else arrFalse.push(arritems[i]);
-		}
-		this.items = arrFalse.concat(arrTrue);
-		return arrFalse.length;
+function partitionOn(pred, items) {
+  let arrTrue = [];
+	let arrFalse = [];
+	for (let i = 0; i < items.length; i ++){
+		if (pred(items[i]) === true) arrTrue.push(items[i]);
+		else arrFalse.push(items[i]);
 	}
+  items.splice(0 , (items.length));
+  	for (i = 0; i < arrFalse.length; i ++){items.push(arrFalse[i])}
+    for (i = 0; i < arrTrue.length; i ++){items.push(arrTrue[i])}
+		return arrFalse.length;
+}
 	items = [1,2,3,4,5,6,7,8,9];
 	function isEven(n) {return n % 2 == 0}
 	let i = partitionOn(isEven , items);
-	document.write(i);
+		document.write(i);
 	document.write('<br>');
 	document.write(items);
 </script>	
 </body>
 </html>
+
+
+
+function partitionOn(pred, arritems) {
+	let arrTrue = [];
+	let arrFalse = [];
+	for (let i = 0; i < arritems.length; i ++){
+	if (pred(arritems[i]) == true) arrTrue.push(arritems[i]);
+	else arrFalse.push(arritems[i]);
+	}
+	items = arrFalse.concat(arrTrue);
+	console.log(items);
+	return arrFalse.length;
+	}

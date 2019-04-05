@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Изучаем язык JavaScript</title>
+	<script type="text/javascript" href="javascript.js"></script>
+</head>
+<body>
+<script type="text/javascript"> 
+
+function add(n) {
+var currentCount = 0;
+var summ = 0;     
+return function(){
+	for (i = 1; i <= n; i++){
+		summ = summ + i;
+		currentCount++;
+	}
+	return summ;};     
+}
+var counter = add(5);
+document.write(counter()); 
+
+</script>	
+</body>
+</html>
